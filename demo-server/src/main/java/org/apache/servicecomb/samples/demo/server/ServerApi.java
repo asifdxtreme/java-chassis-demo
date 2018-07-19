@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.demo.client;
+package org.apache.servicecomb.samples.demo.server;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -23,22 +23,15 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import org.apache.servicecomb.provider.rest.common.RestSchema;
-import org.apache.servicecomb.provider.springmvc.reference.RestTemplateBuilder;
-import org.springframework.web.client.RestTemplate;
 
-@RestSchema(schemaId = "helloclient")
+@RestSchema(schemaId = "hello")
 @Path("/")
 @Produces(MediaType.APPLICATION_JSON)
-public class ClientApi {
-	private static RestTemplate templateNew = RestTemplateBuilder.create();
+public class ServerApi {
 
-	@Path("/sayhello")
+	@Path("/sayhi")
 	@GET
 	public String sayHi() {
-		String microserviceName = "DemoServer";
-		String cseUrlPrefix = "cse://" + microserviceName + "/";
-		String result = templateNew.getForObject(cseUrlPrefix + "sayhi", String.class);
-		System.out.println(result);
-		return result;
+		return "Hello Guest: I am server 1.0";
 	}
 }

@@ -15,7 +15,7 @@
 ## limitations under the License.
 ## ---------------------------------------------------------------------------
 
-APPLICATION_ID: huawei-demo
+APPLICATION_ID: huaweidemo
 service_description:
   name: DemoClient
   version: 0.0.1
